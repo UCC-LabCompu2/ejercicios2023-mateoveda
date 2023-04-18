@@ -11,10 +11,10 @@ div{
     width: 10%;
     border-radius: 50%;
 }
-body{
+body {
     text-align: center;
     font-family: 'Lora', cursiva;
-    background-color: black;
+    background: linear-gradient(to right, black, gray);
 }
 h1, h2, h3{
     text-shadow: 2px 3px #73a5be;

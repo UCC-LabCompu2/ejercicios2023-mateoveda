@@ -11,14 +11,14 @@
 
 <div class="centrado div-conver">
     <h1>Conversor de Unidades</h1>
-    <form>
+    <form name="pasaje">
         <p>
             <label for="grados">Grados</label> =
-            <input id="grados" type="text" name="unid_grados" onchange="convertirGr(this.id)">
+            <input id="grados" type="text" name="unid_grados" onchange="convertirGr(this.id,this.value)">
         </p>
         <p>
             <label for="radianes">Radianes</label> =
-            <input id="radianes" type="text" name="unid_radianes" onchange="convertirGr(this.id)">
+            <input id="radianes" type="text" name="unid_radianes" onchange="convertirGr(this.id,this.value)">
         </p>
     </form>
 </div>

@@ -101,5 +101,56 @@ let cargarValor = () => {
     urlCompleta = urlCompleta.split('#');
     const distancia = urlCompleta[1];
     const unidad = urlCompleta[2];
-    doucment.getElementById("dist").value = `${distancia} ${unidad}`;
+    document.getElementById("dist").value = `${distancia} ${unidad}`;
+}
+
+let guardarLS = () => {
+    const dist = document.getElementById("distancia").value;
+    const uni = document.getElementById("unidades").value;
+
+    localStorage.setItem("distanciaLS",dist);
+    localStorage.setItem("unidades",uniLS);
+    window.open("web2.html");
+}
+
+let cargarLs = () => {
+    const distancia = localStorage.getItem("distanciaLS");
+    const unidad = localStorage.getItem("unidadLS");
+    document.getElementById("dist").value = `${distancia} ${unidad}`;
+}
+
+let dibujarCirculoCuadrado = () => {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let xMax = canvas.width;
+    let yMax = canvas.height;
+    ctx.fillStyle = "#333";
+
+    //dibuja el rectangulo
+    let margen = 5;
+    ctx.fillRect(0+margen,yMax-121-margen,130,121);
+
+    //dibuja el circulo
+    ctx.arc(xMax/2,yMax/2,200,0,2*Math.PI);
+    ctx.stroke(); //dibujo los bordes
+    ctx.fill();//pinto el circulo por dentro
+
+}
+
+let limpiarCanvas = () => {
+    let canvas = document.getElementById("myCanvas");
+    canvas.width = canvas.width;
+}
+
+let dibujar = () => {
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+
+    let posX = event.clientX;
+    let posY = event.clientY;
+    console.log(posX, posY);
+
+    ctx.fillRect(posX, posY, 5,5);
+    ctx.fill();
 }
